@@ -1,0 +1,151 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color:rgb(255, 255, 255);
+  }
+  nav{
+    height:50px;
+    background-color: rgb(255, 255, 255);
+  }
+  h1{
+    margin:0;
+    text-align: center;
+    font-size: 3.7rem;
+    color: rgb(9, 22, 32);
+  }
+  
+  h5{
+    color: rgb(236, 234, 234);
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .sec1{
+    margin: 0px auto 5px auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+  }
+  #reset{
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+    }
+  #play,#pause{
+    margin: 2px;
+  }
+  .slidecontainer{
+    display: inline-block;
+  }
+  h4{
+    display: inline-block;
+    color: rgb(3, 3, 3);
+  
+  }
+  #untext{
+    color: white;
+  }
+  #genarray{
+    color: yellow;
+  }
+  .visuals{
+    margin: auto;
+    margin-top: 25px;
+    height:70vh;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(233, 232, 232);
+    flex-direction: row;
+  }
+  .visuall{
+    margin: auto;
+    height:350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+  }
+  .ev{
+    display: inline-block;
+    margin: 0 1px;
+    border: 1px solid black;
+    transform: rotateX(180deg);
+    transform-origin: top;
+    box-shadow: 3px 0px 4px;
+    border-radius: 0px 0px 3px 3px;
+  
+  }
+  #unsorted,#sorted,#left,#right,#current{
+    width: 60%;
+    height: 43px;
+    margin: 5px 10px;
+    border-radius: 3px 3px 3px 3px;
+    display: inline-block;
+    text-align: center;
+  }
+  #unsorted{
+    background-color: #0d1137;
+  }
+  #sorted{
+    background-color: #e52165;
+  }
+  #legend{
+    width: 90%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto 5px auto;
+  }
+  
+  #left{
+    background-color: orange;
+  }
+  #right{
+    background-color: yellow;
+  }
+  #current{
+    background-color: red;
+  }
+  hr{
+    margin: 3px auto 3px auto;
+  }
+  footer{
+    width: 100%;
+    color: grey;
+    text-align: center;
+    margin: 0;
+  }
+  @media (max-width:600px),(max-height:700px){
+    button{
+      margin-bottom: 10px;
+    }
+    h4{
+      margin-top: 10px;
+      display: block;
+    }
+  }
+  @media (max-width:700px){
+    h1{
+      font-size: 3rem;
+    }
+    .ev{
+      border: none;
+    }
+  
+    button{
+      margin: 10px;
+    }
+    h4{
+      margin-top: 10px;
+      display: block;
+    }
+    h5{
+      font-size: 0.7rem;
+    }
+    #legend{
+    }
+  }

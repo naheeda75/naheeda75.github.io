@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Sorting Visualizer</title>
+  </head>
+
+  <body>
+    <nav>
+      <h1>Sorting Visualizer</h1>
+    </nav>
+    <br>
+    <section class="sec1">
+
+      <div class="buttons">
+        <h4>Array Size:
+          <div class="slidecontainer">
+            <input id="arsize" type="range" min="4" max="40" value="5" class="slider">
+          </div>
+        </h4>
+
+        <h4>Speed:
+            <div class="slidecontainer">
+              <input id="arspeed" type="range" min="1" max="5" value="1" class="slider">
+            </div>
+          </h4>
+
+        <button id="selection" onclick="Selection()" class="btn btn-light" type="button" name="button">Selection Sort</button>
+        <button class="btn btn-light" onclick="Insertion()" type="button" name="button">Insertion Sort</button>
+        <button id="bubble" onclick="Bubble()" class="btn btn-light" type="button" name="button">Bubble Sort<i class="fa fa-info-circle"></i></button>
+        <button class="btn btn-light" onclick="Merge()" type="button" name="button">Merge Sort</button>
+        <button class="btn btn-light" onclick="Quick()" type="button" name="button">Quick Sort</button>
+        <button id="reset" class="btn btn-light" onclick="reset()" type="reset" name="button" >Reset</button>
+        </div>
+    </section>
+    
+    <div id="legend" class="container" style="display: flex;">
+      <div id="unsorted">
+        <h5 id="untext">Unsorted</h5>
+      </div>
+
+      <div id="sorted">
+        <h5 id="sortext">Sorted</h5>
+      </div>
+
+      <div id="left">
+        <h5 id="leftext">Larger than Pivot from Left</h5>
+      </div>
+
+      <div id="right">
+        <h5 id="rightext">Smaller than Pivot from Right</h5>
+      </div>
+
+      <div id="current">
+        <h5 id="currtext">Pivot Element</h5>
+      </div>
+
+    </div>
+      <section class="visuals" id="visua">
+
+      </section>
+      <section class="visuall" id="visual"><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 1%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 1%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 1%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 3%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 4%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 5%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 6%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 7%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 9%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 10%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 10%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 11%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 12%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 12%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 15%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 15%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 15%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 16%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 18%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 18%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 19%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 20%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 20%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 21%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 24%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 24%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 25%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 25%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 27%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 29%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 29%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 29%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 32%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 35%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 39%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 40%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 40%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 40%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 41%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 41%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 41%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 43%;"></div><div class="ev" style="background-color: turquoise; width: 12px; height: 47%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 47%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 44%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 46%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 49%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 49%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 49%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 53%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 50%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 52%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 58%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 58%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 62%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 60%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 61%;"></div><div class="ev" style="background-color: rgb(229, 33, 101); width: 12px; height: 63%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 79%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 75%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 88%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 76%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 73%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 84%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 86%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 88%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 85%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 89%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 80%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 88%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 89%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 87%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 69%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 86%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 84%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 72%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 83%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 87%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 84%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 72%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 74%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 64%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 88%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 76%;"></div><div class="ev" style="background-color: rgb(13, 17, 55); width: 12px; height: 81%;"></div></section>
+    <script src="javascript/main.js" charset="utf-8"></script>
+    <script src="javascript/selectionsort.js" charset="utf-8"></script>
+    <script src="javascript/bubblesort.js" charset="utf-8"></script>
+    <script src="javascript/insertionsort.js" charset="utf-8"></script>
+    <script src="javascript/mergesort.js" charset="utf-8"></script>
+    <script src="javascript/quicksort.js" charset="utf-8"></script>
+  
+
+
+</body></html>
